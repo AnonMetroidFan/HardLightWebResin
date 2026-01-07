@@ -1,7 +1,7 @@
 - type: trait
   id: Leadfooted
-  name: Lead-footed
-  description: somehow able to stay standing during the rigors of FTL
+  name: Lead-footed-name
+  description: Lead-footed-text
   category: Physical
   cost: 3
   components:
@@ -10,7 +10,7 @@
 - type: trait
   id: Innoculated
   name: Innoculated
-  description: made Zombie immune due to regular ambuzol plus innoculations.
+  description: Innoculated-text
   category: Physical
   cost: 5
   components:
@@ -19,7 +19,7 @@
 - type: trait
   id: insulated
   name: Insulated
-  description: through natural or artificial means you're naturally insulated against electricity
+  description: Insulated-text
   category: Physical
   cost: 10
   speciesBlacklist:
@@ -35,7 +35,7 @@
 - type: trait
   id: heatresistant
   name: heatresistant
-  description: through natural or artificial means you're naturally insulated against fire
+  description: heatresistant-text
   category: Physical
   cost: 10
   speciesBlacklist:
@@ -59,7 +59,7 @@
 - type: trait
   id: radproof
   name: radproof
-  description: through natural or artificial means you're naturally insulated against radiation
+  description: radproof-text
   category: Physical
   cost: 10
   speciesBlacklist:
@@ -80,7 +80,7 @@
 - type: trait
   id: snakeeater
   name: snakeeater
-  description: through natural or artificial means you're naturally immune to toxins
+  description: snakeeater-text
   category: Physical
   cost: 10
   speciesBlacklist:
@@ -100,8 +100,8 @@
 
 - type: trait
   id: cryoresistant
-  name: cryo resistant
-  description: through natural or artificial means you're naturally insulated against the cold
+  name: cryo-resistant
+  description: Cryo-resistant-text
   category: Physical
   cost: 8
   speciesBlacklist:
@@ -121,8 +121,8 @@
 
 - type: trait
   id: NaturalRegen
-  name: natural regeneration
-  description: naturally capable of healing from lesser injuries.
+  name: natural-regeneration-name
+  description: natural-regeneration-text
   category: Physical
   cost: 6
   mutuallyExclusiveTraits:
@@ -142,8 +142,8 @@
 
 - type: trait
   id: UnnaturalRegen
-  name: unnatural regeneration
-  description: capable of healing from most injuries with unnatural efficiency.
+  name: unnatural-regeneration-name
+  description: unnatural-regeneration-text
   category: Physical
   cost: 8
   mutuallyExclusiveTraits:
