@@ -1,7 +1,7 @@
 - type: trait
   id: Leadfooted
-  name: Lead-footed-name
-  description: Lead-footed-text
+  name: Lead-footed
+  description: somehow able to stay standing during the rigors of FTL
   category: Physical
   cost: 3
   components:
@@ -10,7 +10,7 @@
 - type: trait
   id: Innoculated
   name: Innoculated
-  description: Innoculated-text
+  description: made Zombie immune due to regular ambuzol plus innoculations.
   category: Physical
   cost: 5
   components:
@@ -19,13 +19,13 @@
 - type: trait
   id: insulated
   name: Insulated
-  description: Insulated-text
+  description: through natural or artificial means you're naturally insulated against electricity
   category: Physical
   cost: 10
   speciesBlacklist:
   - IPC
   mutuallyExclusiveTraits:
-  - heatresistant
+  - fireproof
   - radproof
   - snakeeater
   - cryoresistant
@@ -35,7 +35,7 @@
 - type: trait
   id: heatresistant
   name: heatresistant
-  description: heatresistant-text
+  description: through natural or artificial means you're naturally insulated against fire
   category: Physical
   cost: 10
   speciesBlacklist:
@@ -46,7 +46,7 @@
   - snakeeater
   - cryoresistant
   components:
-  - type: heatresistantBodyParts
+  - type: FireproofBodyParts
   - type: DamageProtectionBuff
     modifiers:
       dermal:
@@ -59,14 +59,14 @@
 - type: trait
   id: radproof
   name: radproof
-  description: radproof-text
+  description: through natural or artificial means you're naturally insulated against radiation
   category: Physical
   cost: 10
   speciesBlacklist:
   - IPC
   mutuallyExclusiveTraits:
   - insulated
-  - heatresistant
+  - fireproof
   - snakeeater
   - cryoresistant
   components:
@@ -80,14 +80,14 @@
 - type: trait
   id: snakeeater
   name: snakeeater
-  description: snakeeater-text
+  description: through natural or artificial means you're naturally immune to toxins
   category: Physical
   cost: 10
   speciesBlacklist:
   - IPC
   mutuallyExclusiveTraits:
   - insulated
-  - heatresistant
+  - fireproof
   - radproof
   - cryoresistant
   components:
@@ -100,14 +100,14 @@
 
 - type: trait
   id: cryoresistant
-  name: cryo-resistant
-  description: Cryo-resistant-text
+  name: cryo resistant
+  description: through natural or artificial means you're naturally insulated against the cold
   category: Physical
   cost: 8
   speciesBlacklist:
   - IPC
   mutuallyExclusiveTraits:
-  - heatresistant
+  - fireproof
   - insulated
   - snakeeater
   - radproof
@@ -115,14 +115,14 @@
   - type: DamageProtectionBuff
     modifiers:
       dermal:
-        id: ColdproofTrait
+        id: cryoresistantTrait
         coefficients:
           Cold: 0.01
 
 - type: trait
   id: NaturalRegen
-  name: natural-regeneration-name
-  description: natural-regeneration-text
+  name: natural regeneration
+  description: naturally capable of healing from lesser injuries.
   category: Physical
   cost: 6
   mutuallyExclusiveTraits:
@@ -142,8 +142,8 @@
 
 - type: trait
   id: UnnaturalRegen
-  name: unnatural-regeneration-name
-  description: unnatural-regeneration-text
+  name: unnatural regeneration
+  description: capable of healing from most injuries with unnatural efficiency.
   category: Physical
   cost: 8
   mutuallyExclusiveTraits:
