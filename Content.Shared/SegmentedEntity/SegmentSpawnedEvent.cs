@@ -2,10 +2,10 @@ namespace Content.Shared.SegmentedEntity;
 
 public sealed class SegmentSpawnedEvent : EntityEventArgs
 {
-    public EntityUid BlueRainLizard = default!;
+    public EntityUid Lamia = default!;
 
-    public SegmentSpawnedEvent(EntityUid blueRainLizard)
+    public SegmentSpawnedEvent(EntityUid lamia)
     {
-        BlueRainLizard = blueRainLizard;
+        Lamia = lamia;
     }
 }

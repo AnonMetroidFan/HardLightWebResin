@@ -19,7 +19,7 @@ public sealed partial class SegmentedEntityComponent : Component
     ///     A clamped variable that represents the number of segments to be spawned
     /// </summary>
     [DataField]
-    public int NumberOfSegments = 18;
+    public int NumberOfSegments = 3;
 
     /// <summary>
     ///     How wide the initial segment should be.
@@ -43,13 +43,13 @@ public sealed partial class SegmentedEntityComponent : Component
     ///     Represents the prototype used to parent all segments
     /// </summary>
     [DataField]
-    public string InitialSegmentId = "BlueRainLizardInitialSegment";
+    public string InitialSegmentId = "LamiaInitialSegment";
 
     /// <summary>
     ///     Represents the segment prototype to be spawned
     /// </summary>
     [DataField]
-    public string SegmentId = "BlueRainLizardSegment";
+    public string SegmentId = "LamiaSegment";
 
     /// <summary>
     ///     How much to slim each successive segment.
@@ -85,7 +85,7 @@ public sealed partial class SegmentedEntityComponent : Component
     ///     A clamped variable that represents how far from the tip should tapering begin.
     /// </summary>
     [DataField]
-    public int TaperOffset = 18;
+    public int TaperOffset = 3;
 
     /// <summary>
     ///     Coefficient used to finely tune how much explosion damage should be transfered to the body. This is calculated multiplicatively with the derived damage modifier set.

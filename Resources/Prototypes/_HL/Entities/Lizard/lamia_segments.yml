@@ -1,5 +1,5 @@
 - type: entity
-  id: BlueRainLizardInitialSegment
+  id: LamiaInitialSegment
   noSpawn: true
   categories: [ HideSpawnMenu ]
   components:
@@ -22,20 +22,19 @@
     active: True
 
 - type: entity
-  id: BlueRainLizardSegment
-  parent: BlueRainLizardInitialSegment
+  id: LamiaSegment
+  parent: LamiaInitialSegment
   name: Blue Rain Lizard Segment
   noSpawn: true
   categories: [ HideSpawnMenu ]
   components:
-  - type: Sprite
   - type: Tag
     tags:
     - HideContextMenu
     - DoorBumpOpener
 
 - type: entity
-  id: BlueRainLizardTail
+  id: LamiaTail
   name: Blue Rain Lizard Tail
   categories: [ HideSpawnMenu ]
   components:
@@ -58,8 +57,8 @@
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: segment
-      # color: "#d30f0f"
-      # shader: unshaded
+      color: "#d30f0f"
+      shader: unshaded
     scale: 1.2, 1.2
   # - type: Fixtures
     # fixtures:

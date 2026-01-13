@@ -89,7 +89,8 @@
     numberOfSegments: 3
     staticOffset: 0.35
     staticScale: 0.6
-    useTaperSystem: false
+    useTaperSystem: true
+    taperOffset: 3
     texturePath: /Textures/_HL/Lizard/lizard.rsi/segment.png
 
 # - type: entity
