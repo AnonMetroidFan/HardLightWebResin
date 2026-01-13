@@ -33,7 +33,7 @@ public sealed partial class LamiaSystem : EntitySystem
     {
         base.Initialize();
         //Parent subscriptions
-        SubscribeLocalEvent<SegmentedEntityComponent, HitScanAfterRayCastEvent>(OnShootHitscan);
+        // Hitscan filtering is disabled in this codebase.
         SubscribeLocalEvent<SegmentedEntityComponent, InsertIntoEntityStorageAttemptEvent>(OnLamiaStorageInsertAttempt);
         SubscribeLocalEvent<SegmentedEntityComponent, DidEquipEvent>(OnDidEquipEvent);
         SubscribeLocalEvent<SegmentedEntityComponent, DidUnequipEvent>(OnDidUnequipEvent);
@@ -41,7 +41,7 @@ public sealed partial class LamiaSystem : EntitySystem
         SubscribeLocalEvent<SegmentedEntityComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<SegmentedEntityComponent, JointRemovedEvent>(OnJointRemoved);
         SubscribeLocalEvent<SegmentedEntityComponent, EntParentChangedMessage>(OnParentChanged);
-        SubscribeLocalEvent<SegmentedEntityComponent, StoreMobInItemContainerAttemptEvent>(OnStoreSnekAttempt);
+        // Storage passover is disabled in this codebase.
 
         //Child subscriptions
         SubscribeLocalEvent<SegmentedEntitySegmentComponent, InsertIntoEntityStorageAttemptEvent>(OnSegmentStorageInsertAttempt);
@@ -124,10 +124,11 @@ public sealed partial class LamiaSystem : EntitySystem
 
     }
 
-    public void OnStoreSnekAttempt(EntityUid uid, SegmentedEntityComponent comp, ref StoreMobInItemContainerAttemptEvent args)
-    {
-        args.Cancelled = true;
-    }
+    // Store attempts are not handled until the event exists in this codebase.
+    // public void OnStoreSnekAttempt(EntityUid uid, SegmentedEntityComponent comp, ref StoreMobInItemContainerAttemptEvent args)
+    // {
+    //     args.Cancelled = true;
+    // }
 
     private void OnJointRemoved(EntityUid uid, SegmentedEntityComponent component, JointRemovedEvent args)
     {
@@ -185,6 +186,7 @@ public sealed partial class LamiaSystem : EntitySystem
 
         segmentComponent.Lamia = parentuid;
         segmentComponent.AttachedToUid = segmentuid;
+        segmentComponent.MaxSegments = segmentedComponent.NumberOfSegments;
         segmentComponent.DamageModifierConstant = segmentedComponent.NumberOfSegments * segmentedComponent.DamageModifierOffset;
         float damageModifyCoefficient = segmentComponent.DamageModifierConstant / segmentedComponent.NumberOfSegments;
         segmentComponent.DamageModifyFactor = segmentComponent.DamageModifierConstant * damageModifyCoefficient;
@@ -274,20 +276,21 @@ public sealed partial class LamiaSystem : EntitySystem
         }
     }
 
-    private void OnShootHitscan(EntityUid uid, SegmentedEntityComponent component, ref HitScanAfterRayCastEvent args)
-    {
-        if (args.RayCastResults == null)
-            return;
-
-        var entityList = new List<RayCastResults>();
-        foreach (var entity in args.RayCastResults)
-        {
-            if (!component.Segments.Contains(GetNetEntity(entity.HitEntity)))
-                entityList.Add(entity);
-        }
-
-        args.RayCastResults = entityList;
-    }
+    // Hitscan passover is disabled until HitScanAfterRayCastEvent is available in this codebase.
+    // private void OnShootHitscan(EntityUid uid, SegmentedEntityComponent component, ref HitScanAfterRayCastEvent args)
+    // {
+    //     if (args.RayCastResults == null)
+    //         return;
+    //
+    //     var entityList = new List<RayCastResults>();
+    //     foreach (var entity in args.RayCastResults)
+    //     {
+    //         if (!component.Segments.Contains(GetNetEntity(entity.HitEntity)))
+    //             entityList.Add(entity);
+    //     }
+    //
+    //     args.RayCastResults = entityList;
+    // }
 
     private void OnParentChanged(EntityUid uid, SegmentedEntityComponent component, ref EntParentChangedMessage args)
     {

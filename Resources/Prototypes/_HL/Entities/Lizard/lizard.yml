@@ -7,8 +7,7 @@
   - type: Sprite
     sprite: _HL/Lizard/lizard.rsi
     state: lizardheadclosed
-  - type: TrailLeader
-  - type: LizardSegments
+  # - type: TrailLeader
   - type: DamageStateVisuals
     states:
       Alive:
@@ -19,46 +18,46 @@
         Base: deadlizardhead
 
 
-- type: entity
-  id: HL_LizardBody
-  abstract: true
-  name: lizard body
-  components:
-  - type: Sprite
-    sprite: _HL/Lizard/lizard.rsi
-    state: segment
-  - type: TrailLeader
-  - type: TrailFollower
-    delay: 1
-    smoothFactor: 0.65
-    rotationOffsetDeg: -90
+# - type: entity
+  # id: HL_LizardBody
+  # abstract: true
+  # name: lizard body
+  # components:
+  # - type: Sprite
+    # sprite: _HL/Lizard/lizard.rsi
+    # state: segment
+  # - type: TrailLeader
+  # - type: TrailFollower
+    # delay: 1
+    # smoothFactor: 0.65
+    # rotationOffsetDeg: -90
 
-- type: entity
-  id: HL_LizardBody2
-  abstract: true
-  name: lizard ass
-  components:
-  - type: Sprite
-    sprite: _HL/Lizard/lizard.rsi
-    state: segment
-  - type: TrailLeader
-  - type: TrailFollower
-    delay: 1
-    smoothFactor: 0.70
-    rotationOffsetDeg: -90
+# - type: entity
+  # id: HL_LizardBody2
+  # abstract: true
+  # name: lizard ass
+  # components:
+  # - type: Sprite
+    # sprite: _HL/Lizard/lizard.rsi
+    # state: segment
+  # - type: TrailLeader
+  # - type: TrailFollower
+    # delay: 1
+    # smoothFactor: 0.70
+    # rotationOffsetDeg: -90
 
-- type: entity
-  id: HL_LizardTailTip
-  abstract: true
-  name: lizard tail tip
-  components:
-  - type: Sprite
-    sprite: _HL/Lizard/lizard.rsi
-    state: tip
-  - type: TrailFollower
-    delay: 1
-    smoothFactor: 0.70
-    rotationOffsetDeg: -90
+# - type: entity
+  # id: HL_LizardTailTip
+  # abstract: true
+  # name: lizard tail tip
+  # components:
+  # - type: Sprite
+    # sprite: _HL/Lizard/lizard.rsi
+    # state: tip
+  # - type: TrailFollower
+    # delay: 1
+    # smoothFactor: 0.70
+    # rotationOffsetDeg: -90
 
 - type: entity
   id: BlueRainLizard
@@ -74,65 +73,65 @@
       scale: 0.6, 0.6
       color: "#3363ac"
       shader: unshaded
-  - type: TrailLeader
-  - type: LizardSegments
-    bodyPrototype: BlueRainLizardBody
-    body2Prototype: BlueRainLizardBody2
-    tailPrototype: BlueRainLizardTail
-    bodyScale: 0.6
-    body2Scale: 0.6
-    tailScale: 0.6
+  - type: SegmentedEntity
+    numberOfSegments: 2
+    initialSegmentId: BlueRainLizardInitialSegment
+    segmentId: BlueRainLizardSegment
+    staticOffset: 0.35
+    staticScale: 0.6
+    useTaperSystem: false
+    texturePath: /Textures/_HL/Lizard/lizard.rsi/segment.png
 
-- type: entity
-  id: BlueRainLizardBody
-  parent: HL_LizardBody
-  name: Blue Rain Lizard Body
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _HL/Lizard/lizard.rsi
-    scale: 0.6, 0.6
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: segment
-  - type: TrailFollower
-    delay: 2
-    smoothFactor: 0.30
-    rotationOffsetDeg: -90   
+# - type: entity
+  # id: BlueRainLizardBody
+  # parent: HL_LizardBody
+  # name: Blue Rain Lizard Body
+  # categories: [ HideSpawnMenu ]
+  # components:
+  # - type: Sprite
+    # sprite: _HL/Lizard/lizard.rsi
+    # scale: 0.6, 0.6
+    # layers:
+    # - map: [ "enum.DamageStateVisualLayers.Base" ]
+      # state: segment
+  # - type: TrailFollower
+    # delay: 2
+    # smoothFactor: 0.30
+    # rotationOffsetDeg: -90   
 
-- type: entity
-  id: BlueRainLizardBody2
-  parent: HL_LizardBody2
-  name: Blue Rain Lizard Ass
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _HL/Lizard/lizard.rsi
-    scale: 0.6, 0.6
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: segment      
-  - type: TrailFollower
-    delay: 3
-    smoothFactor: 0.60
-    rotationOffsetDeg: -90
+# - type: entity
+  # id: BlueRainLizardBody2
+  # parent: HL_LizardBody2
+  # name: Blue Rain Lizard Ass
+  # categories: [ HideSpawnMenu ]
+  # components:
+  # - type: Sprite
+    # sprite: _HL/Lizard/lizard.rsi
+    # scale: 0.6, 0.6
+    # layers:
+    # - map: [ "enum.DamageStateVisualLayers.Base" ]
+      # state: segment      
+  # - type: TrailFollower
+    # delay: 3
+    # smoothFactor: 0.60
+    # rotationOffsetDeg: -90
 
-- type: entity
-  id: BlueRainLizardTail
-  parent: HL_LizardTailTip
-  name: Blue Rain Lizard Tail
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _HL/Lizard/lizard.rsi
-    scale: 0.6, 0.6
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: tip 
-  - type: TrailFollower
-    delay: 4
-    smoothFactor: 0.60
-    rotationOffsetDeg: -90
+# - type: entity
+  # id: BlueRainLizardTail
+  # parent: HL_LizardTailTip
+  # name: Blue Rain Lizard Tail
+  # categories: [ HideSpawnMenu ]
+  # components:
+  # - type: Sprite
+    # sprite: _HL/Lizard/lizard.rsi
+    # scale: 0.6, 0.6
+    # layers:
+    # - map: [ "enum.DamageStateVisualLayers.Base" ]
+      # state: tip 
+  # - type: TrailFollower
+    # delay: 4
+    # smoothFactor: 0.60
+    # rotationOffsetDeg: -90
 
 - type: entity
   id: RedRainLizard
@@ -148,74 +147,74 @@
       scale: 1.2, 1.2
       color: "#d30f0f"
       shader: unshaded
-  - type: TrailLeader
-  - type: LizardSegments
-    bodyPrototype: RedRainLizardBody
-    body2Prototype: RedRainLizardBody2
-    tailPrototype: RedRainLizardTail
-    bodyScale: 1.2
-    body2Scale: 1.2
-    tailScale: 1.2
+  - type: SegmentedEntity
+    numberOfSegments: 2
+    initialSegmentId: RedRainLizardInitialSegment
+    segmentId: RedRainLizardSegment
+    staticOffset: 0.35
+    staticScale: 1.2
+    useTaperSystem: false
+    texturePath: /Textures/_HL/Lizard/lizard.rsi/segment.png
 
-- type: entity
-  id: RedRainLizardBody
-  parent: HL_LizardBody
-  name: Red Rain Lizard Body
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _HL/Lizard/lizard.rsi
-    scale: 1.2, 1.2
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: segment
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: fronttassle
-      color: "#d30f0f"
-      shader: unshaded
-  - type: TrailFollower
-    delay: 2
-    smoothFactor: 0.30
-    rotationOffsetDeg: -90    
+# - type: entity
+  # id: RedRainLizardBody
+  # parent: HL_LizardBody
+  # name: Red Rain Lizard Body
+  # categories: [ HideSpawnMenu ]
+  # components:
+  # - type: Sprite
+    # sprite: _HL/Lizard/lizard.rsi
+    # scale: 1.2, 1.2
+    # layers:
+    # - map: [ "enum.DamageStateVisualLayers.Base" ]
+      # state: segment
+    # - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      # state: fronttassle
+      # color: "#d30f0f"
+      # shader: unshaded
+  # - type: TrailFollower
+    # delay: 2
+    # smoothFactor: 0.30
+    # rotationOffsetDeg: -90    
 
-- type: entity
-  id: RedRainLizardBody2
-  parent: HL_LizardBody2
-  name: Red Rain Lizard Ass
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _HL/Lizard/lizard.rsi
-    scale: 1.2, 1.2
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: segment      
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: backtassle
-      color: "#d30f0f"
-      shader: unshaded
-  - type: TrailFollower
-    delay: 8
-    smoothFactor: 0.70
-    rotationOffsetDeg: -90
+# - type: entity
+  # id: RedRainLizardBody2
+  # parent: HL_LizardBody2
+  # name: Red Rain Lizard Ass
+  # categories: [ HideSpawnMenu ]
+  # components:
+  # - type: Sprite
+    # sprite: _HL/Lizard/lizard.rsi
+    # scale: 1.2, 1.2
+    # layers:
+    # - map: [ "enum.DamageStateVisualLayers.Base" ]
+      # state: segment      
+    # - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      # state: backtassle
+      # color: "#d30f0f"
+      # shader: unshaded
+  # - type: TrailFollower
+    # delay: 8
+    # smoothFactor: 0.70
+    # rotationOffsetDeg: -90
 
-- type: entity
-  id: RedRainLizardTail
-  parent: HL_LizardTailTip
-  name: Red Rain Lizard Tail
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _HL/Lizard/lizard.rsi
-    scale: 1.2, 1.2
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: tip 
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: tailtassle
-      color: "#d30f0f"
-      shader: unshaded
-  - type: TrailFollower
-    delay: 8
-    smoothFactor: 0.70
-    rotationOffsetDeg: -90
+# - type: entity
+  # id: RedRainLizardTail
+  # parent: HL_LizardTailTip
+  # name: Red Rain Lizard Tail
+  # categories: [ HideSpawnMenu ]
+  # components:
+  # - type: Sprite
+    # sprite: _HL/Lizard/lizard.rsi
+    # scale: 1.2, 1.2
+    # layers:
+    # - map: [ "enum.DamageStateVisualLayers.Base" ]
+      # state: tip 
+    # - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      # state: tailtassle
+      # color: "#d30f0f"
+      # shader: unshaded
+  # - type: TrailFollower
+    # delay: 8
+    # smoothFactor: 0.70
+    # rotationOffsetDeg: -90
