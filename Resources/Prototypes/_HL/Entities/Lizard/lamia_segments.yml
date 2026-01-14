@@ -1,6 +1,5 @@
 - type: entity
   id: LamiaInitialSegment
-  noSpawn: true
   categories: [ HideSpawnMenu ]
   components:
   - type: Physics
@@ -25,7 +24,6 @@
   id: LamiaSegment
   parent: LamiaInitialSegment
   name: Blue Rain Lizard Segment
-  noSpawn: true
   categories: [ HideSpawnMenu ]
   components:
   - type: Tag
