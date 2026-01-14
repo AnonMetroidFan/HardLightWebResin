@@ -36,6 +36,14 @@
      "directions": 4
     },
 	{
+     "name": "critlizardhead",
+     "directions": 4
+    },
+	{
+     "name": "deadlizardhead",
+     "directions": 4
+    },
+	{
      "name": "alive",
      "directions": 4
     },
