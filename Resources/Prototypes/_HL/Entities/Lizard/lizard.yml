@@ -7,7 +7,6 @@
   - type: Sprite
     sprite: _HL/Lizard/lizard.rsi
     state: lizardheadclosed
-  # - type: TrailLeader
   - type: DamageStateVisuals
     states:
       Alive:
@@ -16,48 +15,6 @@
         Base: critlizardhead
       Dead:
         Base: deadlizardhead
-
-
-# - type: entity
-  # id: HL_LizardBody
-  # abstract: true
-  # name: lizard body
-  # components:
-  # - type: Sprite
-    # sprite: _HL/Lizard/lizard.rsi
-    # state: segment
-  # - type: TrailLeader
-  # - type: TrailFollower
-    # delay: 1
-    # smoothFactor: 0.65
-    # rotationOffsetDeg: -90
-
-# - type: entity
-  # id: HL_LizardBody2
-  # abstract: true
-  # name: lizard ass
-  # components:
-  # - type: Sprite
-    # sprite: _HL/Lizard/lizard.rsi
-    # state: segment
-  # - type: TrailLeader
-  # - type: TrailFollower
-    # delay: 1
-    # smoothFactor: 0.70
-    # rotationOffsetDeg: -90
-
-# - type: entity
-  # id: HL_LizardTailTip
-  # abstract: true
-  # name: lizard tail tip
-  # components:
-  # - type: Sprite
-    # sprite: _HL/Lizard/lizard.rsi
-    # state: tip
-  # - type: TrailFollower
-    # delay: 1
-    # smoothFactor: 0.70
-    # rotationOffsetDeg: -90
 
 - type: entity
   id: BlueRainLizard
@@ -96,59 +53,27 @@
     taperOffset: 3
     texturePath: /Textures/_HL/Lizard/lizard.rsi/bluesegment.png
     shaderId: unshaded
-# - type: entity
-  # id: BlueRainLizardBody
-  # parent: HL_LizardBody
-  # name: Blue Rain Lizard Body
-  # categories: [ HideSpawnMenu ]
-  # components:
-  # - type: Sprite
-    # sprite: _HL/Lizard/lizard.rsi
-    # scale: 0.6, 0.6
-    # layers:
-    # - map: [ "enum.DamageStateVisualLayers.Base" ]
-      # state: segment
-  # - type: TrailFollower
-    # delay: 2
-    # smoothFactor: 0.30
-    # rotationOffsetDeg: -90   
-
-# - type: entity
-  # id: BlueRainLizardBody2
-  # parent: HL_LizardBody2
-  # name: Blue Rain Lizard Ass
-  # categories: [ HideSpawnMenu ]
-  # components:
-  # - type: Sprite
-    # sprite: _HL/Lizard/lizard.rsi
-    # scale: 0.6, 0.6
-    # layers:
-    # - map: [ "enum.DamageStateVisualLayers.Base" ]
-      # state: segment      
-  # - type: TrailFollower
-    # delay: 3
-    # smoothFactor: 0.60
-    # rotationOffsetDeg: -90
-
-# - type: entity
-  # id: BlueRainLizardTail
-  # parent: HL_LizardTailTip
-  # name: Blue Rain Lizard Tail
-  # categories: [ HideSpawnMenu ]
-  # components:
-  # - type: Sprite
-    # sprite: _HL/Lizard/lizard.rsi
-    # scale: 0.6, 0.6
-    # layers:
-    # - map: [ "enum.DamageStateVisualLayers.Base" ]
-      # state: tip 
-  # - type: TrailFollower
-    # delay: 4
-    # smoothFactor: 0.60
-    # rotationOffsetDeg: -90
 
 - type: entity
-  id: greenRainLizard
+  id: HostileBlueRainLizard
+  parent: BlueRainLizard
+  name: hostile Blue Rain Lizard
+  components:
+  - type: NpcFactionMember
+    factions:
+    - AgressiveLizard
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _HL/Lizard/lizard.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: lizardheadopen
+      scale: 0.6, 0.6
+      color: "#3363ac"
+      shader: unshaded
+      
+- type: entity
+  id: GreenRainLizard
   parent: HL_LizardHead
   name: Green Rain Lizard
   components:
@@ -177,7 +102,25 @@
     shaderId: unshaded
 
 - type: entity
-  id: pinkRainLizard
+  id: HostileGreenRainLizard
+  parent: GreenRainLizard
+  name: hostile Green Rain Lizard
+  components:
+  - type: NpcFactionMember
+    factions:
+    - AgressiveLizard
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _HL/Lizard/lizard.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: lizardheadopen
+      scale: 0.8, 0.8
+      color: "#14fc00"
+      shader: unshaded
+
+- type: entity
+  id: PinkRainLizard
   parent: HL_LizardHead
   name: Pink Rain Lizard
   components:
@@ -206,7 +149,25 @@
     shaderId: unshaded
 
 - type: entity
-  id: whiteRainLizard
+  id: HostilePinkRainLizard
+  parent: PinkRainLizard
+  name: hostile Pink Rain Lizard
+  components:
+  - type: NpcFactionMember
+    factions:
+    - AgressiveLizard
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _HL/Lizard/lizard.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: lizardheadopen
+      scale: 0.8, 0.8
+      color: "#fc14a8"
+      shader: unshaded
+
+- type: entity
+  id: WhiteRainLizard
   parent: HL_LizardHead
   name: White Rain Lizard
   components:
@@ -241,7 +202,25 @@
     movementVisibilityRate: 0.25
 
 - type: entity
-  id: cyanRainLizard
+  id: HostileWhiteRainLizard
+  parent: WhiteRainLizard
+  name: hostile White Rain Lizard
+  components:
+  - type: NpcFactionMember
+    factions:
+    - AgressiveLizard
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _HL/Lizard/lizard.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: lizardheadopen
+      scale: 0.9, 0.9
+      color: "#fcfcfc"
+      shader: unshaded
+
+- type: entity
+  id: CyanRainLizard
   parent: HL_LizardHead
   name: Cyan Rain Lizard
   components:
@@ -268,6 +247,24 @@
     taperOffset: 3
     texturePath: /Textures/_HL/Lizard/lizard.rsi/backcyansegment.png
     shaderId: unshaded
+
+- type: entity
+  id: HostileCyanRainLizard
+  parent: CyanRainLizard
+  name: hostile Cyan Rain Lizard
+  components:
+  - type: NpcFactionMember
+    factions:
+    - AgressiveLizard
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _HL/Lizard/lizard.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: lizardheadopen
+      scale: 0.9, 0.9
+      color: "#16a59c"
+      shader: unshaded
 
 - type: entity
   id: RedRainLizard
@@ -297,6 +294,24 @@
     taperOffset: 3
     texturePath: /Textures/_HL/Lizard/lizard.rsi/redsegment.png
     shaderId: unshaded
+
+- type: entity
+  id: HostileRedRainLizard
+  parent: RedRainLizard
+  name: hostile Red Rain Lizard
+  components:
+  - type: NpcFactionMember
+    factions:
+    - AgressiveLizard
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _HL/Lizard/lizard.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: lizardheadopen
+      scale: 1.2, 1.2
+      color: "#d30f0f"
+      shader: unshaded
     
 # - type: entity
   # id: RedRainLizardBody
