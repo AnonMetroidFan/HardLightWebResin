@@ -83,24 +83,13 @@ public sealed partial class ShipRotateToAngleOperator : HTNOperator, IHtnConditi
         };
     }
 
-    public override void Shutdown(NPCBlackboard blackboard, HTNOperatorStatus status)
+    public void ConditionalShutdown(NPCBlackboard blackboard)
     {
-        base.Shutdown(blackboard, status);
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
 
         _steering.Unregister(owner);
 
         if (RemoveKeyOnFinish)
             blackboard.Remove<Angle>(AngleKey);
-    }
-
-    public HTNPlanState ConditionalShutdown(NPCBlackboard blackboard)
-    {
-        var status = Update(blackboard, 0f);
-
-        if (status == HTNOperatorStatus.Continuing)
-            return HTNPlanState.Continue;
-
-        return ShutdownState;
     }
 }
