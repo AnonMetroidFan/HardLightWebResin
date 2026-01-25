@@ -266,7 +266,7 @@
   categories: [ HideSpawnMenu ] # Frontier
   components:
   - type: Sprite
-    sprite: Mobs/Aliens/Carps/magicsharkminnow.rsi
+    sprite: Mobs/Aliens/Carps/magisharkminnow.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: alive
