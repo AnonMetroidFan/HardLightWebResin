@@ -69,7 +69,7 @@ public sealed class SeedExtractorSystem : EntitySystem
         }
 
         if (stackCount > 1 && stack != null)
-            _stackSystem.SetCount(args.Used.Value, stack.Count - stackCount, stack);
+            _stackSystem.SetCount(args.Used, stack.Count - stackCount, stack);
         else
             QueueDel(args.Used);
 
