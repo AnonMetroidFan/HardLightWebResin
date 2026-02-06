@@ -916,3 +916,29 @@ Entries:
   changes: []
   id: 98
   time: '2026-02-03T19:47:18.0000000+00:00'
+- author: NotLivyathan
+  changes:
+    - type: Add
+      message: >-
+        Night vision and thermal vision cybernetic eyes have been added to the
+        Syndicate uplink, and can also be researched.
+    - type: Add
+      message: >-
+        Resomi and Shadekin now have night vision. *Shadekin night vision
+        automatically activates in low-light conditions.
+    - type: Add
+      message: >-
+        Space Dragons, Rat Kings, and Xenos now have toggleable thermal vision,
+        and Space Dragons now have working night vision, as well.
+  id: 99
+  time: '2026-02-06T20:00:16.0000000+00:00'
+- author: warcrazed11
+  changes:
+    - type: Add
+      message: Added the Harbor Master.
+    - type: Tweak
+      message: Freelancers now are under the Harbor Master.
+    - type: Add
+      message: Gives the freelancers their own comms.
+  id: 100
+  time: '2026-02-06T21:02:55.0000000+00:00'
