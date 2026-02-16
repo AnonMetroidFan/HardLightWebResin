@@ -7,5 +7,18 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: Mobs/Aliens/elemental.rsi
+      - spr9ite: Mobs/Aliens/elemental.rsi
         state: alive
+
+- type: entity
+  id: RoomGridSpawnAreaMarker
+  name: room grid area marker
+  parent: MarkerBase
+  components:
+  - type: RoomGridSpawnArea
+    area_group: RoomSpawnA
+    width: 9
+    height: 9
+  - type: Sprite
+    layers:
+      - state: blue

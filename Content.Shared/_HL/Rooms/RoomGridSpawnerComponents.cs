@@ -1,0 +1,24 @@
+using Robust.Shared.GameStates;
+using Robust.Shared.Serialization.Manager.Attributes;
+
+namespace Content.Shared._HL.Rooms;
+
+[RegisterComponent, NetworkedComponent]
+public sealed partial class RoomGridSpawnerConsoleComponent : Component
+{
+    [DataField("area_group")]
+    public string AreaGroup = string.Empty;
+}
+
+[RegisterComponent]
+public sealed partial class RoomGridSpawnAreaComponent : Component
+{
+    [DataField("area_group")]
+    public string AreaGroup = string.Empty;
+
+    [DataField("width")]
+    public float Width = 5f;
+
+    [DataField("height")]
+    public float Height = 5f;
+}
