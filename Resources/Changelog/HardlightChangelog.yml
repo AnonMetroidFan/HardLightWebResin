@@ -1467,3 +1467,11 @@ Entries:
       message: Protogen can now be psionic.
   id: 154
   time: '2026-03-01T00:07:16.0000000+00:00'
+- author: NotLivyathan
+  changes:
+    - type: Tweak
+      message: All cryopods now function similar to Frontier's cryo sleep units.
+    - type: Tweak
+      message: AFK auto cryo timer increase from 15 minutes to 2 hours.
+  id: 155
+  time: '2026-03-01T06:15:52.0000000+00:00'
