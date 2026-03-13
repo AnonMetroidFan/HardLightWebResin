@@ -53,4 +53,7 @@
       - !type:EmptyAllContainersBehaviour
       - !type:DoActsBehavior
         acts: ["Destruction"]
-
+  - type: InjectOnTrigger
+    solution: test
+    amount: 5
+    cooldown: 3
